@@ -1,0 +1,95 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.trigger {
+    width: 100%;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    /* Match inputs */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-family: var(--font-inter);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.trigger:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.selectedContent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon {
+    color: var(--primary);
+    /* The color prop from js will override this usually */
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    background: rgba(20, 20, 30, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.dropdown.open {
+    display: block;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.option:last-child {
+    border-bottom: none;
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.optionLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.optionName {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.optionPrice {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    /* Align numbers nicely */
+}
